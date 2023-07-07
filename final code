@@ -1,0 +1,22 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        original = {}
+        uniquesorted = []
+        for i in strs:
+            j= "".join(sorted(i))
+            if j not in uniquesorted:
+                original[j] = [i] 
+                uniquesorted.append(j)
+            elif j in uniquesorted:
+                original[j].append(i)
+        
+        return(original.values())
+     
+        
+
+
+             
